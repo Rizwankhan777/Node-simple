@@ -1,0 +1,24 @@
+var nodemailer = require ('nodemailer');
+var transport = nodemailer.createTransport({
+    host:'smtp.gmail.com',
+    port:587,
+    secure:false,
+    requireTLS:true,
+    auth:{
+        user:'rizwikhan.712@gmail.com',
+        pass:'ubitkhan@12345'
+    }
+});
+var mailOptions = {
+    from:'rizwikhan.712@gmail.com',
+    to:'rizwikhan.712@gmail.com',
+    subject:'hello from node',
+    tetx:'hello this is node'
+}
+transport.sendMail(mailOptions,function(error,info){
+    if(error){
+        console.log("big error");
+    }else{
+        console.warn('email has been sent',info.response)
+    }
+})
