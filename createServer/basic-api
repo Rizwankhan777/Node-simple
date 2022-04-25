@@ -1,0 +1,9 @@
+const http = require('http');
+const data = require('./data')
+http.createServer((req,res)=>{
+    res.writeHead(200,{"CONTENT-TYPE":'application/json'});
+    res.write(JSON.stringify(data))
+    res.end()
+    console.log("heelo nodemon");
+
+}).listen(3000);
