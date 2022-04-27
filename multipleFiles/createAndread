@@ -1,0 +1,19 @@
+const fs =require('fs')
+const path =require('path');
+const dirPath = path.join(__dirname,'files');
+// console.log('files created');
+// for (i=0; i<5; i++){
+//   fs.writeFileSync(dirPath+`hello${i}.txt`,"demo text from node");
+// }
+
+fs.readdir(dirPath, (err, files) => {
+  if (err)
+    console.log(err);
+  else {
+    console.log("\nCurrent directory filenames:");
+    files.forEach(file => {
+      console.log("file name is" + file);
+    })
+  }
+})
+  
