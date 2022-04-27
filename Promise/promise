@@ -1,0 +1,13 @@
+const a = 20;
+const b = 0;
+console.log('before resolve value is '+ a)
+
+const newPromise = new Promise ((resolve,reject)=>{
+  setTimeout(() =>{
+    resolve(30);
+  },2000);
+
+})
+newPromise.then((data)=>{
+  console.log('after resolve', a+data)
+})
