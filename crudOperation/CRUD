@@ -1,0 +1,32 @@
+const fs =require('fs')
+const path = require('path');
+
+const dirPath = (__dirname,'crud');
+const filePath = `${dirPath}/apple.txt`
+const newPath =`${dirPath}/crud.txt`
+
+// fs.writeFileSync(filePath,"This is for Crud");
+  
+// fs.readFile(filePath,'utf8' ,(err, data) => {
+//   if (err) throw err;
+//   console.log((data));
+// });
+
+
+
+// fs.appendFile(filePath, 'crud data to append', (err) => {
+//   if (err) throw err;
+//   console.log('The "data to append" was appended to file!');
+// });
+
+
+
+// fs.rename(filePath, newPath, (err) => {
+//   if (err) throw err;
+//   console.log('Rename complete!');
+// });
+
+fs.unlink(newPath, (err) => {
+  if (err) throw err;
+  console.log('successfully deleted'+filePath);
+});
